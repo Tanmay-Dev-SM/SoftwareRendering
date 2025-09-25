@@ -8,65 +8,86 @@ A **software rendering engine built from scratch in C**, designed for educationa
 
 - **Custom Graphics Loop**  
   `process_input → update (matrices) → project_points (perspective) → render → draw → repeat`
-
 - **Drawing Algorithms**
-  - DDA (Digital Differential Analyzer) for lines and edges  
-  - Flat-top & flat-bottom triangle rasterization  
-
+  - DDA (Digital Differential Analyzer) for lines and edges
+  - Flat-top & flat-bottom triangle rasterization
 - **Mesh and Texture Loading**
-  - `.obj` mesh loader (custom implementation)  
-  - `.png` texture loading using lightweight library  
-
+  - `.obj` mesh loader (custom)
+  - `.png` texture loading using a lightweight library
 - **Culling & Depth**
-  - Backface culling  
-  - Painter’s algorithm and Z-buffer  
-
+  - Backface culling
+  - Painter’s algorithm and Z-buffer
 - **Transforms**
-  - World matrix per object (translation, rotation, scaling)  
-  - Projection and view matrix for camera movement  
-
+  - World matrix per object (translation, rotation, scaling)
+  - View + projection matrices for camera
 - **Lighting & Shading**
-  - Flat shading  
-  - Gouraud shading  
-  - Blinn-Phong lighting with dynamic sources  
-
+  - Flat shading
+  - Gouraud shading
+  - Blinn-Phong lighting with dynamic sources
 - **Texture Mapping**
-  - Barycentric coordinates  
-  - Perspective-correct affine mapping (no distortion)  
-
+  - Barycentric interpolation
+  - Perspective-correct mapping (no distortion)
 - **Debugging**
-  - SDL2 output window  
-  - Toggle wireframe, shaded, or textured modes  
+  - SDL2 output window
+  - Toggle wireframe / shaded / textured
 
 ---
 
 ## 🗂️ Project Structure
 
+~~~
 src/
-├── main.c # Entry point
-├── renderer.c # Core rasterizer
-├── rasterizer.c # Triangle filling
-├── zbuffer.c # Depth buffer
-├── mesh_loader.c # OBJ loader
-├── texture_loader.c # PNG loader
-├── math.c # Vector/Matrix math
-└── lighting.c # Shading & lighting
+├── main.c            # Entry point
+├── renderer.c        # Core rasterizer
+├── rasterizer.c      # Triangle filling
+├── zbuffer.c         # Depth buffer
+├── mesh_loader.c     # OBJ loader
+├── texture_loader.c  # PNG loader
+├── math.c            # Vector/Matrix math
+└── lighting.c        # Shading & lighting
+~~~
 
 ---
 
 ## ⚙️ Dependencies
 
-- [SDL2](https://www.libsdl.org/) – window & display  
-- [stb_image.h](https://github.com/nothings/stb) – PNG texture loading  
+- [SDL2](https://www.libsdl.org/) — window & display
+- [stb_image.h](https://github.com/nothings/stb) — PNG texture loading
 
 ---
 
 ## 🛠️ Build Instructions
 
 ### Linux / macOS
-```bash
+~~~bash
 gcc src/*.c -o rasterizer -lSDL2 -lm
 ./rasterizer
+~~~
 
+### Windows (MinGW)
+~~~bash
 gcc src/*.c -o rasterizer.exe -lmingw32 -lSDL2main -lSDL2 -lm
 rasterizer.exe
+~~~
+
+---
+
+## 🎮 Controls
+
+- **Arrow Keys / WASD** — Move or rotate camera
+- **R / T / Y** — Scale object
+- **1–3** — Toggle shading (Flat, Gouraud, Blinn-Phong)
+- **4** — Wireframe mode
+- **Esc** — Quit
+
+---
+
+## 🚀 Roadmap
+
+- [ ] Perspective-correct clipping
+- [ ] Mipmapping for textures
+- [ ] Normal mapping
+- [ ] Multi-light support
+- [ ] SIMD optimizations
+
+---
