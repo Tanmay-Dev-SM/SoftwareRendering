@@ -84,7 +84,6 @@ rasterizer.exe
 
 ## 🚀 Roadmap
 
-- [ ] Perspective-correct clipping
 - [ ] Mipmapping for textures
 - [ ] Normal mapping
 - [ ] Multi-light support
