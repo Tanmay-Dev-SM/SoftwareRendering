@@ -10,6 +10,15 @@ A **software rendering engine built from scratch in C**, designed for educationa
 
 ---
 
+## Current View Formats
+1.wireframe with Backface culling
+2.shaded wirframe with Backface culling
+3.shaded with Backface culling
+4.Texture wireframe with Backface culling
+5.Texture with Backface culling
+
+---
+
 ## ✨ Features
 
 - **Custom Graphics Loop**  
