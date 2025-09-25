@@ -4,6 +4,10 @@ A **software rendering engine built from scratch in C**, designed for educationa
 
 ---
 
+## 📸 Screenshots
+
+---![software_rendering](https://github.com/user-attachments/assets/563dc044-409e-4d78-9769-efdfd6fbc654)
+
 ## ✨ Features
 
 - **Custom Graphics Loop**  
